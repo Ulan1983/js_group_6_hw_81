@@ -27,24 +27,26 @@ class Link extends Component {
 		return (
 			<div className='Link'>
 				<h1>Shorten your link!</h1>
-				<input
-					className="input"
-					type="text"
-					name="originalURL"
-					placeholder="Enter URL here"
-					value={this.state.originalURL}
-					onChange={this.inputChangeHandler}
-					required
-				/>
-				<div>
-					<button
-						className="btn"
-						type="submit"
-						onClick={this.submitHandler}
-					>
-						Shorten!
-					</button>
-				</div>
+				<form onSubmit={this.submitHandler}>
+					<input
+						className="input"
+						type="text"
+						name="originalURL"
+						placeholder="Enter URL here"
+						value={this.state.originalURL}
+						onChange={this.inputChangeHandler}
+						required
+					/>
+					<div>
+						<button
+							className="btn"
+							type="submit"
+						>
+							Shorten!
+						</button>
+					</div>
+				</form>
+
 				{this.props.shortURL &&
 					<div>
 						<h4>Your link now looks like this:</h4>
